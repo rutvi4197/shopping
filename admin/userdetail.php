@@ -69,7 +69,6 @@ function checkDelete(){
 	<th>Email_id
 	<th>User Name
 	<th>Mobile No
-	<th>City
 	<th>Gender	
 	<th>Action
 </tr>
@@ -78,15 +77,15 @@ function checkDelete(){
 	
 		require '../database.php';
 		$obj=new database();
-		$res=$obj->getdata("select * from user_tbl where type='User'");
+		$type='User';
+		$res=$obj->userdis($type);
 		while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 		{
 			echo "<tr><center>";
-			echo "<td>".$row["email_id"];
+			echo "<td>".$row["pk_email_id"];
 			echo "<td>".$row["user_name"];
-			echo "<td>".$row["mobile_no"];
-			echo "<td>".$row["city"];
-			echo "<td>".$row["gender"]."</center>";
+			echo "<td>".$row["user_mobile"];
+			echo "<td>".$row["user_gender"]."</center>";
 ?>	
 
 

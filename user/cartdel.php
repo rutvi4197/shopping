@@ -4,7 +4,7 @@
 
 	require '../database.php';
 	$obj=new database();
-	$res=$obj->getdata("delete  from order_tbl where order_id='$order_id'");
+	$res=$obj->cartdel($order_id);
 	
 	if($res==1)
 	{

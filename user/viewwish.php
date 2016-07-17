@@ -26,7 +26,8 @@ function checkDelete(){
 	
 	'../database.php';
 	$obj=new database();
-	$res=$obj->getdata("select o.*,p.* from order_tbl as o,pro_tbl as p where o.fk_pro_id=p.pro_id and fk_email_id='$email_id' and o.flag='wish'");
+	$flag='wish';
+	$res=$obj->viewcart($email_id,$flag);
 	while($row=mysql_fetch_assoc($res))
 	{
 		

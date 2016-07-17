@@ -18,7 +18,7 @@
 	$id=$_REQUEST["id"];
 	require '../database.php';
 	$obj=new database();
-	$res=$obj->getdata("select * from cat_tbl where cat_id='$id'");
+	$res=$obj->catedit1($id);
 	while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 	{
 		$id=$row["cat_id"];

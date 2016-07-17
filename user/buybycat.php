@@ -36,7 +36,7 @@ include '../header.php';
 		
 		 '../database.php';	
 		$obj=new database();
-		$res=$obj->getdata("select *from pro_tbl where pro_id='$pro_id'");
+		$res=$obj->getpro1($pro_id);
 				
 		while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 		{
@@ -106,7 +106,7 @@ Expect delivery in 4 - 8 days
 				<?php 
 				
 				$obj=new database();
-				$res=$obj->getdata("select * from pro_tbl where fk_cat_id='$cat_id' and pro_id!='$id'");
+				$res=$obj->prodis($cat_id,$id);
 				while($row=mysql_fetch_assoc($res))
 				{
 						echo   '<a href="buybycat.php?id='.$row["pro_id"].'">		

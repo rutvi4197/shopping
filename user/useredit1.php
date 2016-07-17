@@ -17,7 +17,7 @@
 			
 		require '../database.php';
 		$obj=new database();
-		$res=$obj->getdata("update user_tbl set profile_photo='$photo',user_name='$name',mobile_no='$mobile',city='$city',gender='$gender' where email_id='$email'");
+		$res=$obj->useredit($email,$photo,$name,$mobile,$gender);
 		if($res==1)
 		{
 			$_SESSION["email"]=$email;

@@ -5,7 +5,7 @@
 		
 	include '../database.php';	
 	$obj=new database();
-	$res=$obj->getdata("select *from order_tbl where order_id='$order_id'");
+	$res=$obj->wishdis($order_id);
 			
 	while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 	{
@@ -19,7 +19,7 @@
 	else
 	{
 		$obj=new database();
-		$res=$obj->getdata("update order_tbl set flag='cart' where order_id='$order_id'");
+		$res=$obj->updatewish($order_id);
 		header('location:viewcart.php');
 	}
 		

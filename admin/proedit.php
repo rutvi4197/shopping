@@ -20,7 +20,7 @@
 	$id=$_REQUEST["id"];
 	require '../database.php';
 	$obj=new database();
-	$res=$obj->getdata("select * from pro_tbl where pro_id='$id'");
+	$res=$obj->getpro1($id);
 	while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 	{
 		$name=$row["pro_name"];
@@ -110,7 +110,7 @@
  			 <select style="height:30px; width="30px;" name="txtcatname">
 			<?php 
 					$obj=new database();
-					$res=$obj->getdata("select * from cat_tbl");
+					$res=$obj->catdis();
 					while($row=mysql_fetch_assoc($res))
 					{
 						$selected="";

@@ -5,7 +5,7 @@
 
 	require '../database.php';
 	$obj=new database();
-	$res=$obj->getdata("delete from cat_tbl where  cat_id='$id'");
+	$res=$obj->catdel($id);
 	if($res==1)
 	{
 		header('Location:catdis.php');

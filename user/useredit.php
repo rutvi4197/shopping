@@ -33,7 +33,7 @@ $email=$_SESSION["email"];
 
 			'database.php';
 		$obj=new database();
-		$res=$obj->getdata("select * from user_tbl where email_id='$email'");
+		$res=$obj->getuser($email);
 		while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 		{
 			$name=$row["user_name"];

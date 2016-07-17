@@ -75,7 +75,7 @@
        $email=$_SESSION["email"];
             require '../database.php';
                 $obj=new database();
-                $res=$obj->getdata("select * from user_tbl where email_id='$email'");
+                $res=$obj->getuser($email);
 			?>
       <ul class="nav navbar-nav navbar-right">
 	 
@@ -118,7 +118,7 @@
                 $email=$_SESSION["email"];
           
                 $obj=new database();
-                $res=$obj->getdata("select * from user_tbl where email_id='$email'");
+                $res=$obj->getuser($email);
               while($row=mysql_fetch_assoc($res))
               {
 				echo  '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$row["user_name"].'<span class="caret"></span></a>

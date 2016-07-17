@@ -20,7 +20,7 @@
 		$name=$_POST["txtname"];
 		require '../database.php';
 		$obj=new database();
-		$res=$obj->getdata("insert into cat_tbl values(Null,'$name')");
+		$res=$obj->catins($name);
 		if($res==1)
 		{
 			header('Location:catdis1.php');

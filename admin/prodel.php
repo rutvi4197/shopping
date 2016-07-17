@@ -1,4 +1,3 @@
-
 <?php 
 	
 		
@@ -8,13 +7,13 @@
 	require '../database.php';
 	$obj=new database();
 		
-	$res=$obj->getdata("select * from pro_tbl where pro_id='$id'");
+	$res=$obj->getpro1($id);
 	while($row=mysql_fetch_assoc($res))
 	{
 		$photo=$row["pro_photo"];
 		
 	}
-	$res=$obj->getdata("delete from pro_tbl where  pro_id='$id'");
+	$res=$obj->prodel($id);
 	if($res==1)
 	{
 		unlink($photo);

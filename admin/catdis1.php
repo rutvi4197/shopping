@@ -75,7 +75,7 @@ function checkDelete(){
 	
 		require '../database.php';
 		$obj=new database();
-		$res=$obj->getdata("select * from cat_tbl ");
+		$res=$obj->catdis();
 		while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 		{
 			echo "<tr><center>";

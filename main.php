@@ -12,15 +12,15 @@
 	</title>
 </head>
 <body>
-
 <?php 
-	if(isset($_POST["btnlogin"]))
-	{
+	
+		if(isset($_POST["btnlogin"]))
+		{
 		$email=$_POST["txtemail1"];
 		$pwd=$_POST["txtpwd1"];
 		require 'database.php';
 		$obj=new database();
-		$res=$obj->getdata("select * from user_tbl where email_id='$email' and password='$pwd'");
+		$res=$obj->login($email,$pwd);
 
 		$cnt=mysql_num_rows($res);
 		if($cnt==1)
@@ -38,7 +38,7 @@
 		else
 			echo"something went wrong";
 		
-	}
+		}
 	else if(isset($_POST["btnsignup"]))
 	{
 	$email=$_POST["txtemail"];
@@ -54,11 +54,11 @@
 		
 		require 'database.php';
 		$obj=new database();
-		$res=$obj->getdata("insert into user_tbl values('$email','$name','$pwd','$mobile','$city','$gender','$type')");
+		$res=$obj->signup($email,$pwd,$name,$mobile,$gender,$type);
 		if($res==1)
 		{
 			$_SESSION["email"]=$email;
-			header('Location:view.php');
+			header('Location:user/view.php');
 		}
 		else
 			echo"something went wrong";
@@ -70,8 +70,9 @@
 	
 	
 	}
-
+	
 ?>
+	
 
 
 <form action="main.php" method="post">

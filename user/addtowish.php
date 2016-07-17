@@ -6,7 +6,7 @@
 	$pro_id=$_REQUEST["id"];
 	
 	$obj1=new database();
-	$res1=$obj1->getdata("select * from order_tbl where fk_pro_id='$pro_id' and fk_email_id='$email_id' ");
+	$res1=$obj1->addtocart($pro_id,$email_id);
 	$cnt=mysql_num_rows($res1);
 	if($cnt==1)
 	{	
@@ -18,7 +18,7 @@
 	else
 	{
 		$obj=new database();
-		$res=$obj->getdata("select * from pro_tbl where pro_id='$pro_id'");
+		$res=$obj->getpro1($pro_id);
 	
 	while($row=mysql_fetch_assoc($res))
 	{
@@ -29,7 +29,7 @@
 		$flag="wish";
 		$date="24/06/2016";
 		$obj=new database();
-		$res=$obj->getdata("insert into order_tbl values(Null,'$amnt','$date','$pro_id','$email_id','$qty','$flag')");
+		$res=$obj->addcart($amnt,$date,$pro_id,$email_id,$qty,$flag);
 		if($res==1)
 		{
 			header('Location:view.php');

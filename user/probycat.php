@@ -69,14 +69,14 @@
    <?php 
    
   $obj1=new database();
-  $res1=$obj1->getdata("select * from pro_tbl");
+  $res1=$obj1->getpro();
 $count=mysql_num_rows($res1);
   ?>
    <a href="view.php" class="list-group-item ">All Product   <span class="badge" style="background-color:red;" ><?php echo $count; ?></span> </a>
 <?php 
 
 $obj=new database();
-$res=$obj->getdata('select count(p.pro_id)"cnt",c.cat_name,p.fk_cat_id,c.cat_id from cat_tbl as c,pro_tbl as p  where c.cat_id=p.fk_cat_id group by(c.cat_name)');
+$res=$obj->getcat();
 while($row=mysql_fetch_assoc($res))
 {
 	echo '<a href="probycat.php?id='.$row["cat_id"].'" class="list-group-item">'.$row["cat_name"].'<span class="badge" style="background-color:red;" >'.$row["cnt"].'</span></a>';
@@ -111,7 +111,7 @@ while($row=mysql_fetch_assoc($res))
 <?php 
 $id=$_REQUEST["id"];
   $obj=new database();
-  $res=$obj->getdata("select * from pro_tbl where fk_cat_id='$id'");
+  $res=$obj->probycat($id);
 
 while($row=mysql_fetch_assoc($res))
 {

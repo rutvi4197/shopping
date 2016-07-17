@@ -34,7 +34,6 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Details<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="userdetail.php">Show all Users</a></li>
-			 <li><a href="addadmin.php">Add new admin</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             

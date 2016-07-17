@@ -38,7 +38,7 @@
 			{
 				require '../database.php';
 				$obj=new database();
-				$res=$obj->getdata("insert into pro_tbl values(Null,'$str','$name','$price','$soh','$mfg','$warrenty','$color','$detail','$catid')");
+				$res=$obj->getdata($str,$name,$price,$soh,$mfg,$warrenty,$color,$detail,$catid);
 				if($res==1)
 				{
 					header('Location:prodis.php');
@@ -124,7 +124,7 @@
 			<?php 
 					require '../database.php';
 					$obj=new database();
-					$res=$obj->getdata("select * from cat_tbl");
+					$res=$obj->catdis();
 					while($row=mysql_fetch_assoc($res))
 					{
 						echo '<option value="'.$row["cat_id"].'">'.$row["cat_name"].'</option>';

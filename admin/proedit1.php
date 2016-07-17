@@ -20,7 +20,7 @@
 
 	require '../database.php';
 	$obj=new database();
-	$res=$obj->getdata("update pro_tbl set pro_photo='$photo',pro_name='$name',pro_price='$price',pro_soh='$soh',pro_mfg='$mfg',pro_warrenty='$warrenty',pro_detail='$detail',pro_color='$color',fk_cat_id='$catid' where pro_id='$id'");
+	$res=$obj->proedit1($photo,$name,$price,$soh,$mfg,$warrenty,$detail,$color,$catid,$id);
 	if($res==1)
 	{
 		header('Location:prodis.php');

@@ -37,7 +37,7 @@ session_start();
 		
 	 '../database.php';
 	$obj=new database();
-	$res=$obj->getdata("select * from pro_tbl where pro_id='$pro_id'");
+	$res=$obj->getpro1($pro_id);
 	
 	while($row=mysql_fetch_assoc($res))
 	{
@@ -50,8 +50,7 @@ session_start();
 		$flag="order";
 		$date=Date("d/m/y");
 		$obj=new database();
-		$res=$obj->getdata("insert into order_tbl values(Null,'$price','$date','$pro_id','$email_id','$qty',
-		'$flag')");
+		$res=$obj->orderadd($price,$date,$pro_id,$email_id,$qty,$flag);
 		if($res==1)
 		{
 			

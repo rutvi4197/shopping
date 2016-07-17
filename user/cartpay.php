@@ -39,7 +39,7 @@ session_start();
 	 '../database.php';
 	$obj=new database();
 	$flag='order';
-	$res=$obj->getdata("update order_tbl set flag='$flag' where fk_pro_id='$pro_id' and fk_email_id='$email_id'");
+	$res=$obj->payment($flag,$pro_id,$email_id);
 	
 		if($res==1)
 		{

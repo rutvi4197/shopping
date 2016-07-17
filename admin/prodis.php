@@ -80,7 +80,7 @@ function checkDelete(){
 	
 		require '../database.php';
 		$obj=new database();
-		$res=$obj->getdata("select p.* , c.* from pro_tbl as p , cat_tbl as c where c.cat_id=p.fk_cat_id ");
+		$res=$obj->getpro();
 		while($row=mysql_fetch_array($res,MYSQL_ASSOC))
 		{
 			echo "<tr>";
