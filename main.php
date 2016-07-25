@@ -1,5 +1,7 @@
 <?php 
 	session_start();
+	require_once 'login-system-google/./config.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +15,7 @@
 </head>
 <body>
 <?php 
-	
+		require_once './config.php';
 		if(isset($_POST["btnlogin"]))
 		{
 		$email=$_POST["txtemail1"];
@@ -103,9 +105,19 @@
 				</tr>
 				<tr>
 
+					<td>
+					<a class="btn btn-block btn-social btn-facebook" href="<?php echo $loginURL; ?>">
+					<i class="fa fa-facebook"></i> Login with Facebook
+							</a>
+							    <a class="btn btn-block btn-social btn-google-plus" href="login-system-google/google_login.php">
+            <i class="fa fa-google-plus"></i> Login with Google
+          </a>
+					</td>
 					<td></td>
-					<td colspan="2"><a href="">Forgot password?</a>
-				</tr>
+					
+					<td ><a href="">Forgot password?</a></td>
+					
+					</tr>
 			</table>
 		</div>
 	</div>
