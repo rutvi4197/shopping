@@ -115,7 +115,7 @@
 					</td>
 					<td></td>
 					
-					<td ><a href="">Forgot password?</a></td>
+					<td ><a href="forgotpass.php">Forgot password?</a></td>
 					
 					</tr>
 			</table>
